@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>SIGEG</title>
+  <link rel="stylesheet" th:href="@{/styles/styleHomePage.css}">
+</head>
+<body>
+<div class="container">
+  <div class="caixa caixa-1">
+    <div class="logo-container">
+      <img th:src="@{img/logo-senac.png}" alt="Logo Senac">
+    </div>
+
+    <button class="item-menu">
+      <img th:src="@{img/home.png}" alt="Ícone Início" class="icone-botao">
+      Página Inicial
+    </button>
+    <button class="item-menu">
+      <img th:src="@{img/calendario.png}" alt="Ícone Calendário" class="icone-botao">
+      Calendário
+    </button>
+    <button class="item-menu">
+      <img th:src="@{img/ficha.png}" alt="Ícone Ficha Técnica" class="icone-botao">
+      Ficha Técnica
+    </button>
+    <button class="item-menu botao-sair">
+      <img th:src="@{img/sair.png}" alt="Ícone Sair" class="icone-botao">
+      Sair
+    </button>
+  </div>
+
+  <div class="caixa caixa-2">
+    <div class="header-status">
+      <div class="usuario-logado">
+        Usuário: <strong>Chef Instrutor</strong>
+      </div>
+      <div class="data-hora-container">
+        <span id="data-atual">23/06/2026</span> - <span id="hora-atual">09:30</span>
+      </div>
+    </div>
+
+    <div class="conteudo-sistema">
+
+      <div class="linha-dupla">
+
+        <div class="secao-bloco bloco-checklist">
+          <div class="header-checklist">
+            <h3>Checklist de Recebimento</h3>
+            <div class="identificador-aula">
+              <span>Aula Nº: <strong>05</strong></span>
+              <span>Receita: <strong class="texto-laranja">Risoto</strong></span>
+            </div>
+          </div>
+
+          <div class="grid-duplo">
+            <div class="coluna-check">
+              <h4>Ingredientes</h4>
+              <label class="item-checkbox">
+                <input type="checkbox"> Arroz Arbóreo (500g)
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Alho-Poró (2 unid)
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Vinho Branco (150ml)
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Manteiga sem sal (100g)
+              </label>
+            </div>
+
+            <div class="coluna-check">
+              <h4>Utensílios</h4>
+              <label class="item-checkbox">
+                <input type="checkbox"> Panela Fundo Triplo
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Colher de Silicone
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Faca de Chef (Santoku)
+              </label>
+              <label class="item-checkbox">
+                <input type="checkbox"> Tábua de corte
+              </label>
+            </div>
+          </div>
+
+          <div class="observacao-conferencia">
+            <h4>Inconsistências / Defeitos</h4>
+            <textarea placeholder="Caso falte algo ou esteja danificado, relate aqui..." class="textarea-padrao textarea-alerta"></textarea>
+          </div>
+        </div>
+
+        <div class="secao-bloco bloco-checklist">
+          <h3>Cadastrar Receita (Aulas Criativas)</h3>
+          <div class="grupo-input">
+            <input type="text" placeholder="Nome da Receita Criativa..." class="input-padrao">
+          </div>
+
+          <div class="conversor-medidas">
+            <h4>Ingredientes e Conversão Exata</h4>
+            <div class="linha-conversao">
+              <input type="text" placeholder="Ingrediente" class="input-ingrediente">
+              <input type="number" placeholder="Qtd" class="input-qtd">
+
+              <select class="select-medida">
+                <option value="g">g (Gramas)</option>
+                <option value="kg">kg (Quilos)</option>
+                <option value="ml">ml (Mililitros)</option>
+                <option value="l">L (Litros)</option>
+                <option value="xicara">Xícara</option>
+                <option value="colher">Colher de Sopa</option>
+              </select>
+            </div>
+
+            <div class="linha-conversao" style="margin-top: 10px;">
+              <span class="seta-conversao" style="padding: 0 10px;">➔ Converter para:</span>
+              <input type="number" placeholder="Resultado" class="input-qtd" readonly>
+              <select class="select-medida">
+                <option value="g">g exato</option>
+                <option value="kg">kg exato</option>
+                <option value="ml">ml exato</option>
+                <option value="l">L exato</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div> <div class="secao-bloco">
+      <h3>Solicitar Itens Adicionais</h3>
+      <textarea placeholder="Digite aqui os insumos ou itens extras necessários para a aula..." class="textarea-padrao"></textarea>
+    </div>
+
+      <div class="secao-bloco">
+        <h3>Observações por Aula</h3>
+        <textarea placeholder="Anote aqui restrições de alunos, observações pedagógicas ou imprevistos..." class="textarea-padrao"></textarea>
+      </div>
+
+      <div class="btn-container">
+        <button class="btn-salvar">Salvar Planejamento</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
