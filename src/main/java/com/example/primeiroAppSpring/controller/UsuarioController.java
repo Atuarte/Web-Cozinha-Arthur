@@ -76,11 +76,12 @@ public class UsuarioController {
     }
     @PostMapping("/alterarSenha")
     public String processarAlterarSenha(@ModelAttribute UsuarioForm form, Model model){
-        if(!form.getSenha().equals(form.getConfirmarSenha())){
-            model.addAttribute("erro", "Erro, as senhas não correspondem");
-            return "alterarSenha";
-        }
-        model.addAttribute("sucesso", "Senha alterada com sucesso!");
+       String erro = usuarioService.alterarSenha(form);
+
+       if(erro != null){
+           model.addAttribute("erro", erro);
+           return "alterarSenha";
+       }
 
         return "redirect:/login";
     }
